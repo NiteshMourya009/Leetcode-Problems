@@ -27,6 +27,7 @@ public class permutation {
     }
     public static void main(String[] args) {
         int[]nums= {1,2,3} ;
+        Set<List<Integer>> st= new HashSet<>();
         System.out.println(permute(nums));
     }
 }
