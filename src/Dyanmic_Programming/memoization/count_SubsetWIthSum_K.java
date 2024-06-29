@@ -23,7 +23,7 @@ public class count_SubsetWIthSum_K {
         }
         return dp[i][sum]= take+notTake ;
     }
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         int[] nums= {3,2,5} ;
         int sum= 5 ;
         int[][]dp =new int[nums.length][sum+1] ;
