@@ -2,24 +2,20 @@ package com.LeetCode_Question;
 
 public class passThePillow {
     public static int passThePillow(int n, int time) {
-
-
-        if(time<n){
-            n= time+1 ;
+        int ans =0;
+        if( (time/(n-1))%2 !=0 ){
+            int h=time%(n-1) ;
+            ans=n-h ;
         }
-        else if(time>n ){
-            if( (time/n)%2 !=0 ){
-                int h=time%n ;
-                n =n-h-1 ;
-            }
-            else{
-                int q= time/n ;
-                int p= time%n ;
-                n= p+1 +q ;
-            }
+        else{
+            // int q= time/n ;
+            int p= time%(n-1) ;
+            ans= p+1  ;
         }
-        return n ;
+
+        return ans ;
     }
+
     public static void main(String[] args) {
         int time =9 ;
         int n= 8 ;
