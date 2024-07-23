@@ -5,26 +5,15 @@ public  class factorial_trailingZeroes {
         if(n==0) {
             return 0;
         }
-        int fact = 1;
-        for(int i = 1;i<=n;i++) {
-            fact *= i;
-
+        int count =0 ;
+        while(n>0){
+            n= n/5 ;
+            count =count + n  ;
         }
-        System.out.println(fact);
-        int count = 0;
-        while(fact>0) {
-            int zero = fact % 10;
-            if (zero == 0) {
-                count++;
-            } else if (zero > 0) {
-                break;
-            }
-            fact /= 10;
-        }
-        return count;
+        return count ;
     }
     public static void main(String[] args) {
-        int n=13;
+        int n= 30;
         System.out.println(factorialtrailingZeroes(n));
     }
 }
