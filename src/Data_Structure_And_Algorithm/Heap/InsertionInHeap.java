@@ -3,6 +3,7 @@ package Data_Structure_And_Algorithm.Heap;
 import java.util.ArrayList;
 import java.util.List;
 
+// Insertion In Min Heap 
 public class InsertionInHeap {
     public static void swap(List<Integer>heap, int l, int r){
         int temp= heap.get(l);
