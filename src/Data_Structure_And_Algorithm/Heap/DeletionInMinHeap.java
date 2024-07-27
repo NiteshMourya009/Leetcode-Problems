@@ -4,13 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeletionInMinHeap {
+    public static void heapify(List<Integer>arr){  // build heap
+        int firstNonLeafNode= ((arr.size()-1)-1) / 2 ; // last element ka parent
+
+        for(int i=firstNonLeafNode; i>=0; i--){
+            push_Down_MinHeap(arr,i,arr.size()-1 );
+        }
+
+    }
     public static void swap(List<Integer>heap, int l, int r){
         int temp= heap.get(l);
         heap.set(l, heap.get(r));
         heap.set(r,temp) ;
     }
-    public static void push_Down_MaxHeap(List<Integer>heap, int ind){
-        int n= heap.size()-1 ;
+    public static void push_Down_MinHeap(List<Integer>heap, int ind, int n){
+        //int n= heap.size()-1 ;
         if(ind==n){
             return ;
         }
@@ -30,14 +38,14 @@ public class DeletionInMinHeap {
         }
         swap(heap, ind, smallest);
 
-        push_Down_MaxHeap(heap, smallest);
+        push_Down_MinHeap(heap, smallest, n);
 
     }
      public static void deletion_In_MinHeap(List<Integer>heap){
            swap(heap, 0, heap.size()-1);
            heap.remove(heap.size()-1) ;
 
-           push_Down_MaxHeap(heap, 0);
+           push_Down_MinHeap(heap, 0,heap.size()-1);
      }
     public static void main(String[] args) {
         List<Integer>heap= new ArrayList<>() ;
@@ -50,7 +58,9 @@ public class DeletionInMinHeap {
         heap.add(60) ;
         System.out.println(heap);
 
-        deletion_In_MinHeap(heap);
+     // deletion_In_MinHeap(heap);
+
+        heapify(heap);
         System.out.println(heap);
     }
 }
