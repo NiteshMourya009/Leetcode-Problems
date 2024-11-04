@@ -11,15 +11,18 @@ public class superPow {
         for(int i=0; i<n; i++){
             value= value*10 + b[i] ;
         }
-        int max= (int) Math.pow(a,value);
-        int superValue= max% 1337 ;
+        int superValue = 1 ;
+        for(int i=0; i< value; i++){
+            superValue = (superValue*a) %1337 ;
+        }
 
         return superValue ;
     }
     public static void main(String[] args) {
 
-        int a =2;
-        int[]b= {1,0} ;
+        int a =2147483647 ;
+                ;
+        int[]b= {2,0,0} ;
         System.out.println(superPower(a,b));
     }
 }
